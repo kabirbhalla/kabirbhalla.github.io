@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name - Personal Website</title>
+  <style>
+    /* Styles for the banner */
+    .banner {
+      background-color: #3498db; /* Blue color, you can change it */
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Styles for the tabs */
+    .tab-bar {
+      display: flex;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      background-color: #2c3e50; /* Dark color for the tabs, you can change it */
+    }
+
+    .tab-item {
+      flex: 1;
+      padding: 15px;
+      text-align: center;
+      cursor: pointer;
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 20px;
+    }
+
+    /* Show the active tab */
+    .active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Banner Section -->
+  <div class="banner">
+    <h1>Your Name</h1>
+    <p>Welcome to My Personal Website</p>
+  </div>
+
+  <!-- Tabs Section -->
+  <ul class="tab-bar">
+    <li class="tab-item" onclick="openTab('aboutMe')">About Me</li>
+    <li class="tab-item" onclick="openTab('teachingPhilosophy')">Teaching Philosophy</li>
+    <li class="tab-item" onclick="openTab('teaching')">Teaching</li>
+    <li class="tab-item" onclick="openTab('publications')">Publications</li>
+  </ul>
+
+  <!-- Content Section -->
+  <div id="aboutMe" class="tab-content active">
+    <h2>About Me</h2>
+    <p>This is the content of the About Me tab.</p>
+  </div>
+
+  <div id="teachingPhilosophy" class="tab-content">
+    <h2>Teaching Philosophy</h2>
+    <p>This is the content of the Teaching Philosophy tab.</p>
+  </div>
+
+  <div id="teaching" class="tab-content">
+    <h2>Teaching</h2>
+    <p>This is the content of the Teaching tab.</p>
+  </div>
+
+  <div id="publications" class="tab-content">
+    <h2>Publications</h2>
+    <p>This is the content of the Publications tab.</p>
+  </div>
+
+  <script>
+    function openTab(tabName) {
+      var i, tabContent, tabLinks;
+
+      tabContent = document.getElementsByClassName('tab-content');
+      for (i = 0; i < tabContent.length; i++) {
+        tabContent[i].style.display = 'none';
+      }
+
+      tabLinks = document.getElementsByClassName('tab-item');
+      for (i = 0; i < tabLinks.length; i++) {
+        tabLinks[i].classList.remove('active');
+      }
+
+      document.getElementById(tabName).style.display = 'block';
+      event.currentTarget.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
