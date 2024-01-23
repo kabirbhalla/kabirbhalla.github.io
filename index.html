@@ -35,11 +35,11 @@
 </head>
 <body>
 
-  <ul class="tab-bar">
-    <li class="tab-item" onclick="openTab('tab1', event)">BIOL 421 - Plant Microbe Interactions</li>
-    <li class="tab-item" onclick="openTab('tab2', event)">MICB 506 - Microbiological and Immunological Research</li>
-    <li class="tab-item" onclick="openTab('tab3', event)">CTLT Workshop Materials</li>
-  </ul>
+  <div class="tab-bar">
+    <div class="tab-item" onclick="openTab('tab1')">BIOL 421 - Plant Microbe Interactions</div>
+    <div class="tab-item" onclick="openTab('tab2')">MICB 506 - Microbiological and Immunological Research</div>
+    <div class="tab-item" onclick="openTab('tab3')">CTLT Workshop Materials</div>
+  </div>
 
   <div id="tab1" class="tab-content active">
     <h2>BIOL 421 - Plant Microbe Interactions</h2>
@@ -57,7 +57,7 @@
   </div>
 
   <script>
-    function openTab(tabName, event) {
+    function openTab(tabName) {
       var i, tabContent, tabLinks;
 
       tabContent = document.getElementsByClassName('tab-content');
