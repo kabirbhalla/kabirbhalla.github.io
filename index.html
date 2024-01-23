@@ -5,66 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kabir Bhalla</title>
   <style>
-    .tab-content {
-      display: none;
-    }
-
-    .active {
-      display: block;
-    }
-
-    .tab-bar {
-      display: flex;
-    }
-
-    .tab-item {
+    /* Style the list items */
+    .list-item {
       cursor: pointer;
       padding: 10px;
       background-color: darkpurple;
       color: white;
       border-radius: 5px;
+      margin-bottom: 5px;
     }
   </style>
 </head>
 <body>
 
-  <div class="tab-bar">
-    <div class="tab-item" onclick="openTab('tab1')">BIOL 421</div>
-    <div class="tab-item" onclick="openTab('tab2')">MICB 506</div>
-    <div class="tab-item" onclick="openTab('tab3')">CTLT Workshop</div>
-  </div>
+  <ul>
+    <li class="list-item" onclick="displayContent('item1')">BIOL 421 - Plant Microbe Interactions</li>
+    <li class="list-item" onclick="displayContent('item2')">MICB 506 - Microbiological and Immunological Research</li>
+    <li class="list-item" onclick="displayContent('item3')">CTLT Workshop Materials</li>
+  </ul>
 
-  <div id="tab1" class="tab-content active">
-    <h2>BIOL 421 - Plant Microbe Interactions</h2>
-    <p>This is the content of BIOL 421 - Plant Microbe Interactions.</p>
-  </div>
-
-  <div id="tab2" class="tab-content">
-    <h2>MICB 506 - Microbiological and Immunological Research</h2>
-    <p>This is the content of MICB 506 - Microbiological and Immunological Research.</p>
-  </div>
-
-  <div id="tab3" class="tab-content">
-    <h2>CTLT Workshop Materials</h2>
-    <p>This is the content of CTLT Workshop Materials.</p>
+  <div id="content">
+    <p>Select an item from the list to display content.</p>
   </div>
 
   <script>
-    function openTab(tabName) {
-      var i, tabContent, tabLinks;
-
-      tabContent = document.querySelectorAll('.tab-content');
-      for (i = 0; i < tabContent.length; i++) {
-        tabContent[i].style.display = 'none';
+    function displayContent(itemId) {
+      var content = document.getElementById('content');
+      switch (itemId) {
+        case 'item1':
+          content.innerHTML = "<h2>BIOL 421 - Plant Microbe Interactions</h2><p>This is the content of BIOL 421 - Plant Microbe Interactions.</p>";
+          break;
+        case 'item2':
+          content.innerHTML = "<h2>MICB 506 - Microbiological and Immunological Research</h2><p>This is the content of MICB 506 - Microbiological and Immunological Research.</p>";
+          break;
+        case 'item3':
+          content.innerHTML = "<h2>CTLT Workshop Materials</h2><p>This is the content of CTLT Workshop Materials.</p>";
+          break;
+        default:
+          content.innerHTML = "<p>Select an item from the list to display content.</p>";
       }
-
-      tabLinks = document.querySelectorAll('.tab-item');
-      for (i = 0; i < tabLinks.length; i++) {
-        tabLinks[i].classList.remove('active');
-      }
-
-      document.getElementById(tabName).style.display = 'block';
-      event.currentTarget.classList.add('active');
     }
   </script>
 
