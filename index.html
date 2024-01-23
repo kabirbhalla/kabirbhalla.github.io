@@ -17,9 +17,6 @@
 
     /* Style the navigation bar */
     .tab-bar {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
       display: flex;
     }
 
@@ -36,9 +33,9 @@
 <body>
 
   <div class="tab-bar">
-    <div class="tab-item" onclick="openTab('tab1', event)">BIOL 421 - Plant Microbe Interactions</div>
-    <div class="tab-item" onclick="openTab('tab2', event)">MICB 506 - Microbiological and Immunological Research</div>
-    <div class="tab-item" onclick="openTab('tab3', event)">CTLT Workshop Materials</div>
+    <div class="tab-item" onclick="openTab('tab1')">BIOL 421</div>
+    <div class="tab-item" onclick="openTab('tab2')">MICB 506</div>
+    <div class="tab-item" onclick="openTab('tab3')">CTLT Workshop</div>
   </div>
 
   <div id="tab1" class="tab-content active">
@@ -57,15 +54,15 @@
   </div>
 
   <script>
-    function openTab(tabName, event) {
+    function openTab(tabName) {
       var i, tabContent, tabLinks;
 
-      tabContent = document.getElementsByClassName('tab-content');
+      tabContent = document.querySelectorAll('.tab-content');
       for (i = 0; i < tabContent.length; i++) {
         tabContent[i].style.display = 'none';
       }
 
-      tabLinks = document.getElementsByClassName('tab-item');
+      tabLinks = document.querySelectorAll('.tab-item');
       for (i = 0; i < tabLinks.length; i++) {
         tabLinks[i].classList.remove('active');
       }
