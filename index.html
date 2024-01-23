@@ -3,15 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name - Personal Website</title>
+  <title>Kabir Bhalla</title>
   <style>
     /* Styles for the banner */
     .banner {
-      background-color: #3498db; /* Blue color, you can change it */
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+    background-image: url(kabirbhalla.github.io/Chlorphyllum.jpg); /* Replace with the path to your image */
+    background-size: cover; /* Cover the entire container with the image */
+    background-position: center; /* Center the image within the container */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative; /* Add position relative to position the text within the banner */
+  }
+
+  /* Optional: Add an overlay for better text readability */
+  .banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the alpha value for the overlay */
+  }
+
+  /* Optional: Style for the text in the banner */
+  .banner h1, .banner p {
+    z-index: 1; /* Ensure text is above the overlay */
+  }
 
     /* Styles for the tabs */
     .tab-bar {
