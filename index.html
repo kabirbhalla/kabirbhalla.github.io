@@ -3,47 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kabir Bhalla</title>
+  <title>Your Name - Personal Website</title>
   <style>
-    /* Style the list items */
-    .list-item {
-      cursor: pointer;
-      padding: 10px;
-      background-color: darkpurple;
+    /* Styles for the banner */
+    .banner {
+      background-color: #3498db; /* Blue color, you can change it */
       color: white;
-      border-radius: 5px;
-      margin-bottom: 5px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Styles for the tabs */
+    .tab-bar {
+      display: flex;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      background-color: #2c3e50; /* Dark color for the tabs, you can change it */
+    }
+
+    .tab-item {
+      flex: 1;
+      padding: 15px;
+      text-align: center;
+      cursor: pointer;
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 20px;
+    }
+
+    /* Show the active tab */
+    .active {
+      display: block;
     }
   </style>
 </head>
 <body>
 
-  <ul>
-    <li class="list-item" onclick="displayContent('item1')">BIOL 421 - Plant Microbe Interactions</li>
-    <li class="list-item" onclick="displayContent('item2')">MICB 506 - Microbiological and Immunological Research</li>
-    <li class="list-item" onclick="displayContent('item3')">CTLT Workshop Materials</li>
+  <!-- Banner Section -->
+  <div class="banner">
+    <h1>Your Name</h1>
+    <p>Welcome to My Personal Website</p>
+  </div>
+
+  <!-- Tabs Section -->
+  <ul class="tab-bar">
+    <li class="tab-item" onclick="openTab('aboutMe')">About Me</li>
+    <li class="tab-item" onclick="openTab('teachingPhilosophy')">Teaching Philosophy</li>
+    <li class="tab-item" onclick="openTab('teaching')">Teaching</li>
+    <li class="tab-item" onclick="openTab('publications')">Publications</li>
   </ul>
 
-  <div id="content">
-    <p>Select an item from the list to display content.</p>
+  <!-- Content Section -->
+  <div id="aboutMe" class="tab-content active">
+    <h2>About Me</h2>
+    <p>This is the content of the About Me tab.</p>
+  </div>
+
+  <div id="teachingPhilosophy" class="tab-content">
+    <h2>Teaching Philosophy</h2>
+    <p>This is the content of the Teaching Philosophy tab.</p>
+  </div>
+
+  <div id="teaching" class="tab-content">
+    <h2>Teaching</h2>
+    <p>This is the content of the Teaching tab.</p>
+  </div>
+
+  <div id="publications" class="tab-content">
+    <h2>Publications</h2>
+    <p>This is the content of the Publications tab.</p>
   </div>
 
   <script>
-    function displayContent(itemId) {
-      var content = document.getElementById('content');
-      switch (itemId) {
-        case 'item1':
-          content.innerHTML = "<h2>BIOL 421 - Plant Microbe Interactions</h2><p>This is the content of BIOL 421 - Plant Microbe Interactions.</p>";
-          break;
-        case 'item2':
-          content.innerHTML = "<h2>MICB 506 - Microbiological and Immunological Research</h2><p>This is the content of MICB 506 - Microbiological and Immunological Research.</p>";
-          break;
-        case 'item3':
-          content.innerHTML = "<h2>CTLT Workshop Materials</h2><p>This is the content of CTLT Workshop Materials.</p>";
-          break;
-        default:
-          content.innerHTML = "<p>Select an item from the list to display content.</p>";
+    function openTab(tabName) {
+      var i, tabContent, tabLinks;
+
+      tabContent = document.getElementsByClassName('tab-content');
+      for (i = 0; i < tabContent.length; i++) {
+        tabContent[i].style.display = 'none';
       }
+
+      tabLinks = document.getElementsByClassName('tab-item');
+      for (i = 0; i < tabLinks.length; i++) {
+        tabLinks[i].classList.remove('active');
+      }
+
+      document.getElementById(tabName).style.display = 'block';
+      event.currentTarget.classList.add('active');
     }
   </script>
 
