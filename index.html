@@ -36,9 +36,9 @@
 <body>
 
   <div class="tab-bar">
-    <div class="tab-item" onclick="openTab('tab1')">BIOL 421 - Plant Microbe Interactions</div>
-    <div class="tab-item" onclick="openTab('tab2')">MICB 506 - Microbiological and Immunological Research</div>
-    <div class="tab-item" onclick="openTab('tab3')">CTLT Workshop Materials</div>
+    <div class="tab-item" onclick="openTab('tab1', event)">BIOL 421 - Plant Microbe Interactions</div>
+    <div class="tab-item" onclick="openTab('tab2', event)">MICB 506 - Microbiological and Immunological Research</div>
+    <div class="tab-item" onclick="openTab('tab3', event)">CTLT Workshop Materials</div>
   </div>
 
   <div id="tab1" class="tab-content active">
@@ -57,7 +57,7 @@
   </div>
 
   <script>
-    function openTab(tabName) {
+    function openTab(tabName, event) {
       var i, tabContent, tabLinks;
 
       tabContent = document.getElementsByClassName('tab-content');
